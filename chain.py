@@ -13,12 +13,7 @@ class MDL:
         self.task = "text-generation"
         self.model_kwargs = {"temperature": 0, "max_length": 512}
         self.device = 0
-		self.llm = HuggingFacePipeline.from_model_id(
-        model_id = self.model_id,
-        task = self.task,
-        model_kwargs = self.model_kwargs,
-        device = self.device,
-        )
+		self.llm = HuggingFacePipeline.from_model_id(model_id = self.model_id,task = self.task,model_kwargs = self.model_kwargs,device = self.device,)
         qa_chain_instrucEmbed = self.chain()
         return qa_chain_instrucEmbed
 
