@@ -1,4 +1,3 @@
-!pip install transformers > /dev/null
 from langchain import HuggingFacePipeline
 from langchain.chains import RetrievalQA
 

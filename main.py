@@ -1,5 +1,5 @@
 import scrapsplitvec
-import model
+import chain
 import query
 
 retriever = SSV()
