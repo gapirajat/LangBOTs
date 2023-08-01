@@ -1,0 +1,12 @@
+langchain
+openai
+tiktoken
+chromadb
+pypdf
+sentence_transformers
+InstructorEmbedding
+faiss-cpu
+unstructured
+flask
+pyngrtok
+flask-cors
