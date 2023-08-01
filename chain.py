@@ -5,8 +5,8 @@ from langchain.chains import RetrievalQA
 class MDL:
     # First we create a constructor for this class
     # and add members to it, here models
-    def __init__(self):
-        self.retriever
+    def __init__(self, retriever):
+        self.retriever = retriever
         # downloading model
         self.model_id = "bigscience/bloom-560m"
         self.task = "text-generation"
