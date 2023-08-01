@@ -12,10 +12,7 @@ from langchain.embeddings import HuggingFaceInstructEmbeddings
 class SSV:
 
 	def __init__(self):
-		self.urls = [
-        'https://it.pccoepune.com/',
-        'https://it.pccoepune.com/hod'
-        ]
+		self.urls = ['https://it.pccoepune.com/','https://it.pccoepune.com/hod']
         self.chunk_size = 600
         self.chunk_overlap = 100
         self.model_name = "hkunlp/instructor-xl"
