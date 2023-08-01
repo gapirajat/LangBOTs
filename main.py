@@ -3,4 +3,5 @@ import model
 import query
 
 retriever = SSV()
-Query(MDL(retriever = retriever))
+qa_chain_instrucEmbed = MDL(retriever = retriever)
+Query("hello")

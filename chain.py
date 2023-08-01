@@ -21,7 +21,7 @@ class MDL:
     def chain(self):
         qa_chain_instrucEmbed = RetrievalQA.from_chain_type(llm=self.llm,
                                                     chain_type="stuff",
-                                                    retriever=retriever,
+                                                    retriever=self.retriever,
                                                     return_source_documents=True)
         return qa_chain_instrucEmbed                                            
 
