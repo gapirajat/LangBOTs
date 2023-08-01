@@ -8,5 +8,5 @@ from query import Query
 
 
 retriever = SSV()
-qa_chain_instrucEmbed = MDL(retriever = retriever)
+qa_chain_instrucEmbed = MDL(retriever = retriever, device = 1)
 Query("hello")
