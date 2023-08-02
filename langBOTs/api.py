@@ -2,6 +2,8 @@ import nltk
 from flask import Flask, jsonify, request
 from flask_ngrok import run_with_ngrok #add token tho or else weird e
 from flask_cors import CORS
+#requires
+#i
 
 
 
@@ -38,7 +40,7 @@ run_with_ngrok(app)
 #     return jsonify({'first_string': result})
 
 @app.route('/api/second_string', methods=['POST', 'OPTIONS'])
-def process_second_string():
+def process_second_string(query_object):
     if request.method == 'OPTIONS':
         # Handle the OPTIONS request
         response_headers = {
@@ -51,7 +53,7 @@ def process_second_string():
     data = request.get_json()
     print(data)
     second_string = data['second_string']
-    result = qury(second_string)
+    result = query_object.qury(second_string)
     # Process the second string and generate the result
     result = nltk.sent_tokenize(result)[:1]
     print(result)
