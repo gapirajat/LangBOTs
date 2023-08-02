@@ -9,6 +9,7 @@ class Query:
     
     def wrap_text_preserve_newlines(text, width=110):
         # Split the input text into lines based on newline characters
+        print(type(text))
         lines = text.split('\n')
 
         # Wrap each line individually
