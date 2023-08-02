@@ -1,6 +1,6 @@
 LangBOTs
 
-# Foobar
+# Description
 
 A silly library which combines scraping, langchain and flask.
 Inspired by [prompt engineering](https://www.youtube.com/@engineerprompt)
