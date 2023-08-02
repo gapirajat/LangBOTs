@@ -8,7 +8,6 @@ Inspired by [prompt engineering](https://www.youtube.com/@engineerprompt)
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-(scrape->load->split->[dwnld_instructor_e]->create_vec_graph->save(optional)->[download_model->]initialise_chain->query->)->api
 ```bash
 pip install langBOTs
 ```
@@ -28,7 +27,8 @@ chain = MDL(retriever = ret, device = 0).chain()
 Q = Query(chain=chain)
 Q.qury("hello how are you")
 ```
-
+## Flow
+(scrape->load->split->[dwnld_instructor_e]->create_vec_graph->save(optional)->[download_model->]initialise_chain->query->)->api
 ## Contributing
 
 Yo
