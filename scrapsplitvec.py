@@ -17,7 +17,6 @@ class SSV:
                 self.chunk_overlap = chunk_overlap
                 self.model_name = model_name
                 self.kwargs = kwargs
-                self.retur()
         
 
         # A normal print function
@@ -44,7 +43,7 @@ class SSV:
                 retriever = db_instructEmbedd.as_retriever(search_kwargs={"k": self.kwargs})
                 return retriever
         
-        def retur(self):
+        def ret(self):
                 retriever = self.vec(self.split(self.scrap()))
                 return retriever
 #urls, chunk size, overlap, search kwargrs, instructor model

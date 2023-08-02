@@ -4,9 +4,8 @@ import textwrap
 
 class Query:
 
-    def __init__(self, query):
-        ret = self.qury(query)
-        return ret
+    def __init__(self, chain):
+        self.chain = chain
     
     def wrap_text_preserve_newlines(text, width=110):
         # Split the input text into lines based on newline characters
@@ -20,14 +19,14 @@ class Query:
 
         return wrapped_text
 
-    def process_llm_response(llm_response):
+    def process_llm_response(self, llm_response):
         print(self.wrap_text_preserve_newlines(llm_response['result']))
         print('\nSources:')
         for source in llm_response["source_documents"]:
             return source.metadata['source']
 
-    def qury(query):
+    def qury(self, query):
         print('-------------------Instructor Embeddings------------------\n')
-        llm_response = qa_chain_instrucEmbed(query)
+        llm_response = self.chain(query)
         res = self.process_llm_response(llm_response)
         return res
