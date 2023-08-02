@@ -2,21 +2,24 @@ import nltk
 from flask import Flask, jsonify, request
 from flask_ngrok import run_with_ngrok #add token tho or else weird e
 from flask_cors import CORS
+from pydantic import BaseModel
+from typing import Optional, Any
 
-l = 1
 
 
 import locale
 locale.getpreferredencoding = lambda: "UTF-8"  #dunno why
 
 nltk.download('punkt')  # Download the Punkt tokenizer if not already downloaded
-
-
-
 app = Flask(__name__)
 CORS(app)
 run_with_ngrok(app)
 
+
+
+class API(BaseModel):
+  qury_object: Any
+  
 # @app.route('/api/first_string', methods=['POST', 'OPTIONS'])
 # def process_first_string():
 #     if request.method == 'OPTIONS':
@@ -39,7 +42,7 @@ run_with_ngrok(app)
 #     return jsonify({'first_string': result})
 
 @app.route('/api/second_string', methods=['POST', 'OPTIONS'])
-def process_second_string(query_object):
+def process_second_string():
     if request.method == 'OPTIONS':
         # Handle the OPTIONS request
         response_headers = {
@@ -52,13 +55,13 @@ def process_second_string(query_object):
     data = request.get_json()
     print(data)
     second_string = data['second_string']
-    result = query_object.qury(second_string)
+    result = API.qury_object(second_string)
     # Process the second string and generate the result
     result = nltk.sent_tokenize(result)[:1]
     print(result)
     return jsonify({'second_string': result})
 
-def start(object: Any):
-    global query_object
-    query_object = object
+def start(obj)->Any:
+    API(qury_object=obj)
     app.run()
+    del API
