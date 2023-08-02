@@ -7,7 +7,7 @@ class Query:
     def __init__(self, chain):
         self.chain = chain
     
-    def wrap_text_preserve_newlines(text, width=110):
+    def wrap_text_preserve_newlines(self, text, width=110):
         # Split the input text into lines based on newline characters
         print(type(text))
         lines = text.split('\n')
