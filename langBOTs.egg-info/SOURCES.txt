@@ -1,5 +1,10 @@
-README.md
 setup.py
+langBOTs/__init__.py
+langBOTs/api.py
+langBOTs/chain.py
+langBOTs/main.py
+langBOTs/query.py
+langBOTs/scrapsplitvec.py
 langBOTs.egg-info/PKG-INFO
 langBOTs.egg-info/SOURCES.txt
 langBOTs.egg-info/dependency_links.txt

@@ -1,7 +1,7 @@
 from langchain import HuggingFacePipeline
 from langchain.chains import RetrievalQA
 import pydantic
-from typing import optional
+from typing import Optional
 
 
 class MDL:

@@ -5,6 +5,5 @@ InstructorEmbedding
 faiss-cpu
 unstructured
 flask
-pyngrtok
 flask-cors
 pydantic

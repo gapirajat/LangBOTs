@@ -15,7 +15,7 @@ setup(
         'faiss-cpu',
         'unstructured',
         'flask',
-        'pyngrtok',
+        # 'pyngrtok',
         'flask-cors',
         'pydantic',
     ],
