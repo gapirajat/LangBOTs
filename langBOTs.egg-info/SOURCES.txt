@@ -1,0 +1,7 @@
+README.md
+setup.py
+langBOTs.egg-info/PKG-INFO
+langBOTs.egg-info/SOURCES.txt
+langBOTs.egg-info/dependency_links.txt
+langBOTs.egg-info/requires.txt
+langBOTs.egg-info/top_level.txt
