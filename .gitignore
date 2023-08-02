@@ -1,3 +1,6 @@
 __pycache__
 .vscode
 langBOTs.egg-info
+dist
+build
+setup.py
