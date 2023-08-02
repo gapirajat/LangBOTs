@@ -14,7 +14,7 @@ from typing import Optional, Any
 
 # Python code to illustrate the Modules
 class SSV(BaseModel):
-        urls: list = ['https://it.pccoepune.com/','https://it.pccoepune.com/hod']
+        urls: Any = ['https://example.com/','https://example.com/']
         chunk_size: int = 500
         chunk_overlap: int = 100 
         model_name: str = "hkunlp/instructor-xl"
@@ -35,10 +35,11 @@ class SSV(BaseModel):
                 try:
                         if self.data:
                                 print("data already exists")
-                                loaders = UnstructuredURLLoader(urls=self.urls)
-                                self.data = loaders.load()        
+       
                         else:
-                                print("scraping...")                        
+                                print("scraping...")                                 
+                                loaders = UnstructuredURLLoader(urls=self.urls)
+                                self.data = loaders.load()                        
                 except:                            
                         print("scraping...")        
                         loaders = UnstructuredURLLoader(urls=self.urls)
