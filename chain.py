@@ -5,13 +5,13 @@ from langchain.chains import RetrievalQA
 class MDL:
     # First we create a constructor for this class
     # and add members to it, here models
-    def __init__(self, retriever):
+    def __init__(self, retriever, model_id = "bigscience/bloom-560m", task = "text-generation", model_kwargs = {"temperature": 0, "max_length": 512}, device = 0):
         self.retriever = retriever
         # downloading model
-        self.model_id = "bigscience/bloom-560m"
-        self.task = "text-generation"
-        self.model_kwargs = {"temperature": 0, "max_length": 512}
-        self.device = 0
+        self.model_id = model_id
+        self.task = task
+        self.model_kwargs = model_kwargs
+        self.device = device
         self.llm = HuggingFacePipeline.from_model_id(model_id = self.model_id,task = self.task,model_kwargs = self.model_kwargs,device = self.device,)
         qa_chain_instrucEmbed = self.chain()
         return qa_chain_instrucEmbed

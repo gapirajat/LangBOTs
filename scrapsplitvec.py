@@ -11,12 +11,13 @@ from langchain.embeddings import HuggingFaceInstructEmbeddings
 # Python code to illustrate the Modules
 class SSV:
 
-        def __init__(self):
-                self.urls = ['https://it.pccoepune.com/','https://it.pccoepune.com/hod']
-                self.chunk_size = 600
-                self.chunk_overlap = 100
-                self.model_name = "hkunlp/instructor-xl"
-                self.kwargs = 3
+        def __init__(self, urls = ['https://it.pccoepune.com/','https://it.pccoepune.com/hod'], chunk_size = 600, chunk_overlap = 100, model_name = "hkunlp/instructor-xl", kwargs = 3):
+                self.urls = urls
+                self.chunk_size = chunk_size
+                self.chunk_overlap = chunk_overlap
+                self.model_name = model_name
+                self.kwargs = kwargs
+                self.retur()
         
 
         # A normal print function
