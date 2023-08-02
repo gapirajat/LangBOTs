@@ -26,7 +26,7 @@ class Query:
         for source in llm_response["source_documents"]:
             return source.metadata['source']
 
-    def qury(self, query):
+    def qury(self, query: str):
         print('-------------------Instructor Embeddings------------------\n')
         llm_response = self.chain(query)
         res = self.process_llm_response(llm_response)
