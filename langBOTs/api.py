@@ -2,9 +2,8 @@ import nltk
 from flask import Flask, jsonify, request
 from flask_ngrok import run_with_ngrok #add token tho or else weird e
 from flask_cors import CORS
-#requires
-#i
 
+l = 1
 
 
 import locale
@@ -59,5 +58,7 @@ def process_second_string(query_object):
     print(result)
     return jsonify({'second_string': result})
 
-def start():
+def start(object: Any):
+    global query_object
+    query_object = object
     app.run()
