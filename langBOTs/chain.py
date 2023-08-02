@@ -23,7 +23,7 @@ class MDL(BaseModel):
 
     #initialising chains
     def chain(self):
-        if llm != 1:
+        if self.llm != 1:
             self.llm = HuggingFacePipeline.from_model_id(model_id = self.model_id, task = self.task, model_kwargs = self.model_kwargs, device = self.device)
         qa_chain_instrucEmbed = RetrievalQA.from_chain_type(llm=self.llm,
                                                     chain_type="stuff",
