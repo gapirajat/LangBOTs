@@ -13,8 +13,6 @@ class MDL:
         self.model_kwargs = model_kwargs
         self.device = device
         self.llm = HuggingFacePipeline.from_model_id(model_id = self.model_id,task = self.task,model_kwargs = self.model_kwargs,device = self.device,)
-        qa_chain_instrucEmbed = self.chain()
-        return qa_chain_instrucEmbed
 
     #initialising chains
     def chain(self):
@@ -23,6 +21,5 @@ class MDL:
                                                     retriever=self.retriever,
                                                     return_source_documents=True)
         return qa_chain_instrucEmbed                                            
-
 
 
