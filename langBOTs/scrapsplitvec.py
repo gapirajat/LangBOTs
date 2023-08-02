@@ -8,11 +8,11 @@ from langchain.vectorstores import FAISS
 from InstructorEmbedding import INSTRUCTOR# InstructorEmbedding
 from langchain.embeddings import HuggingFaceInstructEmbeddings
 
-import pydantic
+from pydantic import BaseModel
 from typing import Optional
 
 # Python code to illustrate the Modules
-class SSV:
+class SSV(BaseModel):
         urls: list = ['https://it.pccoepune.com/','https://it.pccoepune.com/hod']
         chunk_size: int = 500
         chunk_overlap: int = 100 
