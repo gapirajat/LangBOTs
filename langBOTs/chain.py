@@ -1,16 +1,16 @@
 from langchain import HuggingFacePipeline
 from langchain.chains import RetrievalQA
 from pydantic import BaseModel
-from typing import Optional
+from typing import Optional, Any
 
 
 class MDL(BaseModel):
-    retriever: any
+    retriever: Any
     model_id: str = "bigscience/bloom-560m"
     task: str = "text-generation"
-    model_kwargs: any = {"temperature": 0, "max_length": 512}
+    model_kwargs: Any = {"temperature": 0, "max_length": 512}
     device: int = 0
-    llm: any = HuggingFacePipeline.from_model_id(model_id = model_id, task = task, model_kwargs = model_kwargs, device = device)
+    llm: Any = HuggingFacePipeline.from_model_id(model_id = model_id, task = task, model_kwargs = model_kwargs, device = device)
 
     # def __init__(self, retriever, model_id = "bigscience/bloom-560m", task = "text-generation", model_kwargs = {"temperature": 0, "max_length": 512}, device = 0):
     #     self.retriever = retriever

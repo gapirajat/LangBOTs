@@ -9,7 +9,8 @@ from InstructorEmbedding import INSTRUCTOR# InstructorEmbedding
 from langchain.embeddings import HuggingFaceInstructEmbeddings
 
 from pydantic import BaseModel
-from typing import Optional
+from typing import Optional, Any
+
 
 # Python code to illustrate the Modules
 class SSV(BaseModel):
@@ -18,8 +19,8 @@ class SSV(BaseModel):
         chunk_overlap: int = 100 
         model_name: str = "hkunlp/instructor-xl"
         kwargs: int = 3
-        instructor_embeddings: Optional[any]
-        data: Optional[any]
+        instructor_embeddings: Optional[Any]
+        data: Optional[Any]
 
         # def __init__(self, urls = ['https://it.pccoepune.com/','https://it.pccoepune.com/hod'], chunk_size = 500, chunk_overlap = 100, model_name = "hkunlp/instructor-xl", kwargs = 3):
         #         self.urls = urls

@@ -2,10 +2,10 @@ from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.chains.question_answering import load_qa_chain
 import textwrap
 from pydantic import BaseModel
-from typing import Optional
+from typing import Optional, Any
 
 class Query(BaseModel):
-    chain: any
+    chain: Any
     
     def wrap_text_preserve_newlines(self, text, width=110):
         # Split the input text into lines based on newline characters
