@@ -1,3 +1,6 @@
+LICENSE.txt
+README.md
+setup.cfg
 setup.py
 langBOTs/__init__.py
 langBOTs/api.py

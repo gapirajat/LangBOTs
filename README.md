@@ -1,5 +1,3 @@
-
-
 LangBOTs
 
 # Foobar
