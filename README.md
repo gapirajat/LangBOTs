@@ -6,7 +6,7 @@ Inspired by [prompt engineering](https://www.youtube.com/@engineerprompt)
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install.
 
 
 ```bash
