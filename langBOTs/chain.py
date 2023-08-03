@@ -1,7 +1,8 @@
+"""Initialising huggingface model aswell as langchain"""
 from langchain import HuggingFacePipeline
 from langchain.chains import RetrievalQA
 from pydantic import BaseModel
-from typing import Optional, Any
+from typing import Any
 
 
 class MDL(BaseModel):

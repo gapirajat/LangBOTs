@@ -1,23 +1,27 @@
-import nltk
-from flask import Flask, jsonify, request
+"""runs flask and executes Query.qury() on /api/second_string route"""
+import nltk #to filter output text limiting it to 3 lines
+from flask import Flask, jsonify, request #standard flask
 from flask_ngrok import run_with_ngrok #add token tho or else weird e
-from flask_cors import CORS
+from flask_cors import CORS #had cors error fixed with this
+
 from pydantic import BaseModel
-from typing import Optional, Any
+from typing import Any
 
 
 
 import locale
-locale.getpreferredencoding = lambda: "UTF-8"  #dunno why
+locale.getpreferredencoding = lambda: "UTF-8"  #dunno why but flask wont install without this
 
-nltk.download('punkt')  # Download the Punkt tokenizer if not already downloaded
+nltk.download('punkt')  # Download the Punkt tokenizer for post processing(is it a thing?)
+
 app = Flask(__name__)
 CORS(app)
 run_with_ngrok(app)
 
-
+#Working on changing urls through api(pretty simple tho)
 
 class API(BaseModel):
+  """"""
   qury_object: Any
   
 # @app.route('/api/first_string', methods=['POST', 'OPTIONS'])
@@ -41,8 +45,10 @@ class API(BaseModel):
 
 #     return jsonify({'first_string': result})
 
-@app.route('/api/second_string', methods=['POST', 'OPTIONS'])
+@app.route('/api/query', methods=['POST', 'OPTIONS'])
 def process_second_string():
+    """Querying and Running  through API.qury()"""
+    #CORS
     if request.method == 'OPTIONS':
         # Handle the OPTIONS request
         response_headers = {
@@ -51,10 +57,11 @@ def process_second_string():
             'Access-Control-Allow-Headers': 'Content-Type'
         }
         return '', 200, response_headers
-    ##
+
+
     data = request.get_json()
     print(data)
-    second_string = data['second_string']
+    second_string = data['query']
     result = API.qury_object(second_string)
     # Process the second string and generate the result
     result = nltk.sent_tokenize(result)[:1]
