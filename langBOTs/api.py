@@ -4,8 +4,7 @@ from flask import Flask, jsonify, request #standard flask
 from flask_ngrok import run_with_ngrok #add token tho or else weird e
 from flask_cors import CORS #had cors error fixed with this
 
-from pydantic import BaseModel
-from typing import Any
+from flask import Flask
 
 import locale
 locale.getpreferredencoding = lambda: "UTF-8"  #dunno why but flask wont install without this
@@ -18,9 +17,6 @@ run_with_ngrok(app)
 
 #Working on changing urls through api(pretty simple tho)
 
-class API(BaseModel):
-  """"""
-  qury_object: Any = None
   
 # @app.route('/api/first_string', methods=['POST', 'OPTIONS'])
 # def process_first_string():
@@ -66,9 +62,7 @@ def process_second_string():
     print(result)
     return jsonify({'second_string': result})
 
-def start():
-  if hasattr(Q, 'qury'):
-    app.run() 
-  else:
-    print("The function does not exist in the object.")
-
+def start(obj):
+  global Q
+  Q = obj
+  app.run() 
