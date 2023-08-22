@@ -19,8 +19,8 @@ class SSV(BaseModel):
         chunk_overlap: int = 100 
         model_name: str = "hkunlp/instructor-xl"
         kwargs: int = 3
-        instructor_embeddings: Optional[Any]
-        data: Optional[Any]
+        instructor_embeddings: Optional[Any] = None
+        data: Optional[Any] = None
 
         # def __init__(self, urls = ['https://it.pccoepune.com/','https://it.pccoepune.com/hod'], chunk_size = 500, chunk_overlap = 100, model_name = "hkunlp/instructor-xl", kwargs = 3):
         #         self.urls = urls

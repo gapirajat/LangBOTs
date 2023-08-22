@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='langBOTs',
-    version='0.0.3',
+    version='0.0.31',
     author='Rajat S',
     description='Scrape, Langchain, Deploy !',
     url = 'https://github.com/gapirajat/langBOTs',

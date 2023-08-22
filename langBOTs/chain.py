@@ -6,7 +6,7 @@ from typing import Any
 
 
 class MDL(BaseModel):
-    retriever: Any
+    retriever: Any = None
     model_id: str = "bigscience/bloom-560m"
     task: str = "text-generation"
     model_kwargs: Any = {"temperature": 0, "max_length": 512}

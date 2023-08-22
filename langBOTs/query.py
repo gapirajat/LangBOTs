@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from typing import Any
 
 class Query(BaseModel):
-    chain: Any
+    chain: Any = None
     
     def wrap_text_preserve_newlines(self, text, width=110):
         # Split the input text into lines based on newline characters

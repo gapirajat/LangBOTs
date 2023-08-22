@@ -22,7 +22,7 @@ run_with_ngrok(app)
 
 class API(BaseModel):
   """"""
-  qury_object: Any
+  qury_object: Any = None
   
 # @app.route('/api/first_string', methods=['POST', 'OPTIONS'])
 # def process_first_string():
@@ -69,6 +69,5 @@ def process_second_string():
     return jsonify({'second_string': result})
 
 def start(obj)->Any:
-    API(qury_object=obj)
     app.run()
     del API
