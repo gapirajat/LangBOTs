@@ -1,7 +1,7 @@
 # LangBOTs
 
 
-A silly library which combining scraping, langchain and flask.
+A silly library which combines scraping, langchain and flask.
 Inspired by [prompt engineering](https://www.youtube.com/@engineerprompt)
 
 ## Installation
